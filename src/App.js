@@ -54,12 +54,12 @@ function App() {
           <div className="control">
             <button className="button is-primary " onClick={save}> Salvar</button>
           </div>
-          {todos.map((todo) =>
-            <div className="item">
-              <span className="item-label">{todo.id} - {todo.description}</span>
-              <button className="button is-primary" onClick={ () => remove(todo.id)}>Excluir</button>
+          {todos.map(function(object, i) {
+            return <div className="item"  key={i}>
+              <span className="item-label" key={i}>{object.id} - {object.description}</span>
+              <button className="button is-primary" onClick={() => remove(object.id)}>Excluir</button>
             </div>
-          )}
+          })}
         </div>
       </div>
     </div>
